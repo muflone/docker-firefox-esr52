@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+   firefox-esr52:
+     container_name: firefox-esr52
+     image: olivaresa/firefox-npapi:latest
+     network_mode: none
+     hostname: firefox-esr52
+     domainname: docker.muflone.lan
+     restart: 'no'
+     environment:
+       DISPLAY: :0
+     volumes:
+       - /tmp/.X11-unix:/tmp/.X11-unix
+       - ./data:/home/user
